@@ -2,4 +2,4 @@ langchain
 streamlit
 openai
 sentence-transformers
-faiss
+faiss-cpu
