@@ -8,10 +8,10 @@ import streamlit as st
 
 #from dotenv import load_dotenv, find_dotenv
 #load_dotenv(find_dotenv(), override=True)
-headers = {
-    "authorization":st.secrets['OPENAI_API_KEY'],
-    "content-type":"application/json"
-    }
+# headers = {
+#     "authorization":st.secrets['OPENAI_API_KEY'],
+#     "content-type":"application/json"
+#     }
 openai.api_key = st.secrets["OPENAI_API_KEY"]
 
 st.title('Gaia chatbot')
