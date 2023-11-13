@@ -4,6 +4,7 @@ from langchain.prompts import PromptTemplate
 from langchain.vectorstores import FAISS
 from langchain.embeddings import HuggingFaceEmbeddings
 import streamlit as st
+import openai
 #from streamlit_chat import message
 
 #from dotenv import load_dotenv, find_dotenv
