@@ -13,7 +13,7 @@ import openai
 #     "authorization":st.secrets['OPENAI_API_KEY'],
 #     "content-type":"application/json"
 #     }
-openai.api_key = st.secrets["OPENAI_API_KEY"]
+openai.api_key = st.secrets["openai_api_key"]
 
 st.title('Gaia chatbot')
 question = st.text_input("Write a question about GAIA: ", key="input")
