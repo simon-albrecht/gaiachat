@@ -21,7 +21,7 @@ question = st.text_input("Write a question about GAIA: ", key="input")
 embedding_model = HuggingFaceEmbeddings()
 vectorstore = FAISS.load_local("faiss_index", embedding_model)
 
-llm = ChatOpenAI(model_name="gpt-4-turbo", temperature=0)
+llm = ChatOpenAI(model_name="gpt-4-1106-preview", temperature=0)
 
 #question = 'Where is the GAIA spacecraft?'
 
