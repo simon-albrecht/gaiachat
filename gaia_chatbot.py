@@ -21,11 +21,11 @@ question = st.text_input("Write a question about GAIA: ", key="input")
 embedding_model = HuggingFaceEmbeddings()
 vectorstore = FAISS.load_local("faiss_index", embedding_model)
 
-llm = ChatOpenAI(model_name="gpt-4", temperature=0)
+llm = ChatOpenAI(model_name="gpt-4-turbo", temperature=0)
 
 #question = 'Where is the GAIA spacecraft?'
 
-docs = vectorstore.similarity_search(question,k=5)
+#docs = vectorstore.similarity_search(question,k=5)
 
 template = """Use the following pieces of context to answer the question at the end. If you don't know the answer, just say that you don't know, don't try to make up an answer. Keep the answer as concise as possible. 
 {context}
