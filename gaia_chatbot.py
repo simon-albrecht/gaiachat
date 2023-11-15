@@ -18,15 +18,17 @@ openai.api_key = st.secrets["OPENAI_API_KEY"]
 st.title('Gaia chatbot')
 question = st.text_input("Write a question about GAIA: ", key="input")
 
-@st.cache
+@st.cache_resource
 def load_vectors():
     embedding_model = HuggingFaceEmbeddings()
     return FAISS.load_local("faiss_index", embedding_model)
 
 vectorstore = load_vectors()
 
-llm = ChatOpenAI(model_name="gpt-4-1106-preview", temperature=0)
-
+st.cache_resource
+def load_llm()
+    return ChatOpenAI(model_name="gpt-4-1106-preview", temperature=0)
+llm = load_llm()
 #question = 'Where is the GAIA spacecraft?'
 
 #docs = vectorstore.similarity_search(question,k=5)
