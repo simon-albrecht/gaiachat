@@ -18,8 +18,12 @@ openai.api_key = st.secrets["OPENAI_API_KEY"]
 st.title('Gaia chatbot')
 question = st.text_input("Write a question about GAIA: ", key="input")
 
-embedding_model = HuggingFaceEmbeddings()
-vectorstore = FAISS.load_local("faiss_index", embedding_model)
+@st.cache
+def load_vectors():
+    embedding_model = HuggingFaceEmbeddings()
+    return FAISS.load_local("faiss_index", embedding_model)
+
+vectorstore = load_vectors()
 
 llm = ChatOpenAI(model_name="gpt-4-1106-preview", temperature=0)
 
