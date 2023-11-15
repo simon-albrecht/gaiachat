@@ -26,7 +26,7 @@ def load_vectors():
 vectorstore = load_vectors()
 
 st.cache_resource
-def load_llm()
+def load_llm():
     return ChatOpenAI(model_name="gpt-4-1106-preview", temperature=0)
 llm = load_llm()
 #question = 'Where is the GAIA spacecraft?'
