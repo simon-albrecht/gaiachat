@@ -50,11 +50,14 @@ if question:
     st.write(result["result"])
     st.write('\n')
     st.write('Sources:')
-    for rd in result["source_documents"]:
+    for num, rd in enumerate(result["source_documents"]):
         st.write(rd.metadata["title"])
+        section_info = []
         for item in rd.metadata:
             if item.startswith('Header'):
-                st.write(item+': '+rd.metadata[item])
+                section_info.append(rd.metadata[item])
+        section_info.append('paragraph: '+rd.metadata["paragraph"])
+        st.write('\t(Section: '+', '.join(section_info)+')')
         st.write(rd.metadata["link"])
         st.write('\n')
     
