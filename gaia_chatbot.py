@@ -54,7 +54,7 @@ if question:
         st.write(rd.metadata["title"])
         for item in rd.metatdata:
             if item.startswith('Header'):
-                st.write(item+': '+rd.metatdata[item])
+                st.write(item+': '+rd.metadata[item])
         st.write(rd.metadata["link"])
         st.write('\n')
     
