@@ -52,7 +52,7 @@ if question:
     st.write('Sources:')
     for rd in result["source_documents"]:
         st.write(rd.metadata["title"])
-        for item in rd.metatdata:
+        for item in rd.metadata:
             if item.startswith('Header'):
                 st.write(item+': '+rd.metadata[item])
         st.write(rd.metadata["link"])
