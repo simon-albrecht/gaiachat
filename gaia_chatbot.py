@@ -56,7 +56,8 @@ if question:
         for item in rd.metadata:
             if item.startswith('Header'):
                 section_info.append(rd.metadata[item])
-        section_info.append('paragraph: '+rd.metadata.get("paragraph"))
+        if rd.metadata.get("paragraph"):
+            section_info.append('paragraph: '+rd.metadata["paragraph"])
         st.write('\t(Section: '+', '.join(section_info)+')')
         st.write(rd.metadata["link"])
         st.write('\n')
