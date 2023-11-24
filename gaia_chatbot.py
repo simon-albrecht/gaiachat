@@ -51,7 +51,12 @@ if question:
     st.write('\n')
     st.write('Sources:')
     for rd in result["source_documents"]:
-        st.write(rd.metadata)
+        st.write(rd.metadata["title"])
+        for item in rd.metatdata:
+            if item.startswith('Header'):
+                st.write(item+': '+rd.metatdata[item])
+        st.write(rd.metadata["link"])
+        st.write('\n')
     
     
 # Check the result of the query
