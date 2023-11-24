@@ -51,7 +51,7 @@ if question:
     st.write('\n')
     st.write('Sources:')
     for num, rd in enumerate(result["source_documents"]):
-        st.write(rd.metadata["title"])
+        st.write(str(num)+') '+rd.metadata["title"])
         section_info = []
         for item in rd.metadata:
             if item.startswith('Header'):
