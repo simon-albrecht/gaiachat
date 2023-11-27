@@ -33,7 +33,7 @@ llm = load_llm()
 
 #docs = vectorstore.similarity_search(question,k=5)
 
-template = """Use the following pieces of context to answer the question at the end. Be helpful. If you don't know the answer, just say that you don't know, don't try to make up an answer. 
+template = """Use the following pieces of context to answer the question at the end. Be helpful. Volunteer additional information where relevant. Don't try to make up answers that are not supported by the text. 
 {context}
 Question: {question}
 Helpful Answer:"""
