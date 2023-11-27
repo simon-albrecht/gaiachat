@@ -33,7 +33,7 @@ llm = load_llm()
 
 #docs = vectorstore.similarity_search(question,k=5)
 
-template = """Use the following pieces of context to answer the question at the end. Be helpful. Volunteer additional information where relevant. Don't try to make up answers that are not supported by the text. 
+template = """Use the following pieces of context to answer the question at the end. Be helpful. Volunteer additional information where relevant, but keep it concise. Don't try to make up answers that are not supported by the context. 
 {context}
 Question: {question}
 Helpful Answer:"""
@@ -60,6 +60,7 @@ if question:
             section_info.append('paragraph: '+rd.metadata["paragraph"])
         st.write('   (Section: '+', '.join(section_info)+')')
         st.write(rd.metadata["link"])
+        st.write(rd)
         st.write('\n')
     
     
