@@ -5,6 +5,9 @@ from langchain.vectorstores import FAISS
 from langchain.embeddings import HuggingFaceEmbeddings
 import streamlit as st
 import openai
+import hmac
+
+
 
 def check_password():
     """Returns `True` if the user had a correct password."""
@@ -44,18 +47,16 @@ def check_password():
 if not check_password():
     st.stop()
 
-
-
-
+ 
 #from streamlit_chat import message
 
 #from dotenv import load_dotenv, find_dotenv
 #load_dotenv(find_dotenv(), override=True)
 headers = {
-    "authorization":st.secrets['OPENAIAPIKEY'],
+    "authorization":st.secrets['OPENAI_API_KEY'],
     "content-type":"application/json"
     }
-openai.api_key = st.secrets["OPENAIAPIKEY"]
+openai.api_key = st.secrets["OPENAI_API_KEY"]
 
 st.title('Gaia chatbot')
 question = st.text_input("Write a question about GAIA: ", key="input")
